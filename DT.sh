@@ -206,22 +206,22 @@ echo -e "\033[5;46;42;37m            【 如需开启别的选项返回开启，
 
 
 
-sleep 30
+sleep 10
 echo -ne '                   \033[1;31m  10s \r'
 
-sleep 30
+sleep 10
 echo -ne '                   \033[1;31m  20s \r'
 
-sleep 30
+sleep 10
 echo -ne '                   \033[1;31m  30s \r'
 
-sleep 30
+sleep 10
 echo -ne '                   \033[1;31m  40s \r'
 
-sleep 30
+sleep 10
 echo -ne '                   \033[1;31m  50s \r'
 
-sleep 30
+sleep 10
 echo -ne '                   \033[1;31m  60s \r'
 
 
