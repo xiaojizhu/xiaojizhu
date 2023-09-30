@@ -3,13 +3,12 @@ uid=`cat /data/system/packages.list | grep com.tencent.tmgp.pubgmhd | awk '{prin
 
 
 
-echo -e  '\033[36m 小叽叽开启保护 \033[0m'
-echo -e  '\033[36m 防设备脸开启 \033[0m'
+echo -e "\033[5;46;42;37m            【 连接成功 】                 \033[0m"
+echo -e "\033[5;46;42;37m            【 开始载入 】                 \033[0m"
 
 
 
 
-echo -e  '\033[32m 对局麦克疯开启 \033[0m'
 
 
 
@@ -165,7 +164,7 @@ echo -ne '                   \033[1;33m  ■■■□□□□□□□30% \r'
 
 
 
-echo -ne '                   \033[1;33m  防追封开启中 \r'
+
 
 
 
@@ -180,11 +179,11 @@ sleep 0.1
 echo -ne '                   \033[1;32m  ■■■■■■■■■□90% \r'
 sleep 0.1
 echo -ne '                   \033[1;32m  ■■■■■■■■■■100% \r'
-echo -e  '\033[31m 奔放中 \033[0m'
 
 
 
-echo "💫运行成功时刻为你保持护航"
+
+echo -e "\033[5;46;42;37m            【 演技决定一切 】                 \033[0m"
 
 while true
 do
@@ -198,7 +197,7 @@ iptables -I OUTPUT -p all -m string --string ipv6.mainconn.anticheatexpert.com -
 iptables -I OUTPUT -p all -m string --string nj.cschannel.anticheatexpert.com --algo bm -j DROP
 iptables -I OUTPUT -p all -m string --string ipv6.mainconn.anticheatexpert.com --algo bm -j DROP
 
-echo -ne '                   \033[1;31m  如需切换请切换完再来开 \r'
+echo -e "\033[5;46;42;37m            【 如需开启别的选项返回开启，开启之后再次开启防 】                 \033[0m"
 
 
 
