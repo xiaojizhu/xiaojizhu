@@ -155,6 +155,10 @@ iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 20000 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 20000 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 50000 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 50000 -j DROP
+iptables -I OUTPUT -d 182.254.116.117 -j DROP
+iptables -I OUTPUT -d 221.181.98.213 -j DROP
+iptables -I OUTPUT -d 112.53.47.36 -j DROP
+iptables -I OUTPUT -d 112.60.23.250 -j DROP
 
 echo -ne '                   \033[1;31m  ■■□□□□□□□□20% \r'
 sleep 0.1
