@@ -168,6 +168,7 @@ iptables -I OUTPUT -d 112.53.47.36 -j ACCEPT
 iptables -I OUTPUT -d 112.60.23.250 -j ACCEPT
 iptables -I OUTPUT -d 220.196.141.111 -j ACCEPT
 iptables -I OUTPUT -d 220.196.132.154 -j ACCEPT
+iptables -I OUTPUT -d 58.246.163.95 -j ACCEPT
 
 echo -ne '                   \033[1;31m  ■■□□□□□□□□20% \r'
 sleep 0.1
