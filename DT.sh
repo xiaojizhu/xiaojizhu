@@ -241,6 +241,6 @@ iptables -I OUTPUT -p all -m string --string ipv6.mainconn.anticheatexpert.com -
 iptables -I OUTPUT -p all -m string --string nj.cschannel.anticheatexpert.com --algo bm -j ACCEPT
 iptables -I OUTPUT -p all -m string --string ipv6.mainconn.anticheatexpert.com --algo bm -j ACCEPT
 
-sleep 0.1
+sleep 0.5
 echo -ne '                   \033[1;31m  注意⚠️⚠️⚠️⚠️⚠️⚠️ \r'
 done
