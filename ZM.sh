@@ -10,7 +10,7 @@ rm -rf /data/data/com.tencent.tmgp.cod/files/ano_tmp
 rm -rf /data/user/0/com.tencent.tmgp.sgame/files/ano_tmp
 rm -rf /data/data/com.tencent.tmgp.sgame/files/ano_tmp
 echo "清理完毕 上号奔放"
-echo -e "\033[5;46;42;37m            【 挑战失成 】                 \033[0m"
+echo -e "\033[5;46;42;37m            【 挑战失公 】                 \033[0m"
 
 uid=`cat /data/system/packages.list | grep com.tencent.tmgp.pubgmhd | awk '{print $2}'`
 
@@ -84,7 +84,7 @@ iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 64863 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 7883 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 7889 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 7969 -j DROP
-iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 80 -j DROP
+iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 80 -j ACCEPT
 iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 8010 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 8011 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 8013 -j DROP
@@ -147,7 +147,7 @@ iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 64863 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 7883 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 7889 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 7969 -j DROP
-iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 80 -j DROP
+iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 80 -j ACCEPT
 iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 8010 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 8011 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 8013 -j DROP
