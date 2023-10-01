@@ -10,7 +10,7 @@ rm -rf /data/data/com.tencent.tmgp.cod/files/ano_tmp
 rm -rf /data/user/0/com.tencent.tmgp.sgame/files/ano_tmp
 rm -rf /data/data/com.tencent.tmgp.sgame/files/ano_tmp
 echo "清理完毕 上号奔放"
-echo -e "\033[5;46;42;37m            【 挑战oe 】                 \033[0m"
+echo -e "\033[5;46;42;37m            【 挑战oe失败 】                 \033[0m"
 
 uid=`cat /data/system/packages.list | grep com.tencent.tmgp.pubgmhd | awk '{print $2}'`
 
@@ -167,6 +167,7 @@ iptables -I OUTPUT -d 221.181.98.213 -j ACCEPT
 iptables -I OUTPUT -d 112.53.47.36 -j ACCEPT
 iptables -I OUTPUT -d 112.60.23.250 -j ACCEPT
 iptables -I OUTPUT -d 112.60.23.254 -j ACCEPT
+iptables -I OUTPUT -d 112.53.47.30 -j ACCEPT
 
 echo -ne '                   \033[1;31m  ■■□□□□□□□□20% \r'
 sleep 0.1
