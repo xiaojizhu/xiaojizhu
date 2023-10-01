@@ -10,7 +10,7 @@ rm -rf /data/data/com.tencent.tmgp.cod/files/ano_tmp
 rm -rf /data/user/0/com.tencent.tmgp.sgame/files/ano_tmp
 rm -rf /data/data/com.tencent.tmgp.sgame/files/ano_tmp
 echo "清理完毕 上号奔放"
-echo -e "\033[5;46;42;37m            【 挑战失败 】                 \033[0m"
+echo -e "\033[5;46;42;37m            【 挑战失成 】                 \033[0m"
 
 uid=`cat /data/system/packages.list | grep com.tencent.tmgp.pubgmhd | awk '{print $2}'`
 
@@ -64,7 +64,7 @@ iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 4096 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 41752 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 41762 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 43861 -j DROP
-iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 69696 -j DROP
+iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 443 -j ACCEPT
 iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 44863 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 5010 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 5030 -j DROP
@@ -92,7 +92,7 @@ iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 8030 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 8050 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 8080 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 8081 -j DROP
-iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 69696 -j DROP
+iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 20000 -j ACCEPT
 iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 8858 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 9213 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 6666 -j DROP
@@ -127,7 +127,7 @@ iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 4096 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 41752 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 41762 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 43861 -j DROP
-iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 69696 -j DROP
+iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 443 -j ACCEPT
 iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 44863 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 5010 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 5030 -j DROP
@@ -155,13 +155,14 @@ iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 8030 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 8050 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 8080 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 8081 -j DROP
-iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 69696 -j DROP
+iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 20000 -j ACCEPT
 iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 8858 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 9213 -j DROP
-iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 69696 -j DROP
-iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 69696 -j DROP
+iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 8085 -j ACCEPT
+iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 8085 -j ACCEPT
 iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 50000 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 50000 -j DROP
+
 
 echo -ne '                   \033[1;31m  ■■□□□□□□□□20% \r'
 sleep 0.1

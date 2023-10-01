@@ -3,7 +3,7 @@ uid=`cat /data/system/packages.list | grep com.tencent.tmgp.pubgmhd | awk '{prin
 
 
 
-echo -e "\033[5;46;42;37m            【 连接成功和平 】                 \033[0m"
+echo -e "\033[5;46;42;37m            【 连接成功 】                 \033[0m"
 echo -e "\033[5;46;42;37m            【 开始载入 】                 \033[0m"
 
 
