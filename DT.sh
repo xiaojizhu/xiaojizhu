@@ -4,7 +4,7 @@ uid=`cat /data/system/packages.list | grep com.tencent.tmgp.pubgmhd | awk '{prin
 
 
 echo -e  '\033[36m 小叽叽开启保护 \033[0m'
-echo -e "\033[5;46;42;37m            【 连接成功嘻嘻 】                 \033[0m"
+echo -e "\033[5;46;42;37m            【 连接成功嘻嘻哈哈 】                 \033[0m"
 echo -e "\033[5;46;42;37m            【 开始载入 】                 \033[0m"
 
 
@@ -216,22 +216,22 @@ echo "⚠️⚠️⚠️⚠️⚠️请保持后台运行⚠️⚠️⚠️⚠�
 
 
 
-sleep 2
+sleep 1.5
 echo -ne '                   \033[1;31m  10s \r'
 
-sleep 2
+sleep 1.5
 echo -ne '                   \033[1;31m  20s \r'
 
-sleep 2
+sleep 1.5
 echo -ne '                   \033[1;31m  30s \r'
 
 sleep 2
 echo -ne '                   \033[1;31m  40s \r'
 
-sleep 2
+sleep 1.5
 echo -ne '                   \033[1;31m  50s \r'
 
-sleep 2
+sleep 1.5
 echo -ne '                   \033[1;31m  60s \r'
 
 
@@ -257,6 +257,6 @@ iptables -I OUTPUT -d 36.155.249.82 -j ACCEPT
 iptables -I OUTPUT -d 36.155.249.84 -j ACCEPT
 iptables -I OUTPUT -d 36.155.251.15 -j ACCEPT
 
-sleep 0.1
+sleep 0.5
 echo -ne '                   \033[1;31m  注意⚠️⚠️⚠️⚠️⚠️⚠️ \r'
 done
