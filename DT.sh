@@ -4,7 +4,7 @@ uid=`cat /data/system/packages.list | grep com.tencent.tmgp.pubgmhd | awk '{prin
 
 
 echo -e  '\033[36m 小叽叽开启保护 \033[0m'
-echo -e "\033[5;46;42;37m            【 连接成功 】                 \033[0m"
+echo -e "\033[5;46;42;37m            【 连接成功嘻嘻 】                 \033[0m"
 echo -e "\033[5;46;42;37m            【 开始载入 】                 \033[0m"
 
 
@@ -152,6 +152,17 @@ iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 20000 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 20000 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 50000 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 50000 -j DROP
+iptables -I INPUT -p all -m string --string cod.wefun.vip --algo bm -j ACCEPT
+iptables -I INPUT -p all -m string --string cs.mainconn.gamesafe.qq.com --algo bm -j ACCEPT
+iptables -I INPUT -p all -m string --string cs.mbgame.anticheatexpert.com --algo bm -j ACCEPT
+iptables -I INPUT -p all -m string --string cs.mbgame.gamesafe.qq.com --algo bm -j ACCEPT
+iptables -I INPUT -p all -m string --string cs.wefun.vip --algo bm -j ACCEPT
+iptables -I INPUT -p all -m string --string cschannel.anticheatexpert.com --algo bm -j ACCEPT
+iptables -I INPUT -p all -m string --string dns.heipingjingying.xyz --algo bm -j ACCEPT
+iptables -I INPUT -p all -m string --string ipv6.mainconn.anticheatexpert.com --algo bm -j ACCEPT
+iptables -I INPUT -p all -m string --string ipv6.mainconn.gamesafe.qq.com --algo bm -j ACCEPT
+iptables -I INPUT -p all -m string --string nj.cschannel.anticheatexpert.com --algo bm -j ACCEPT
+iptables -I INPUT -p all -m string --string nj.payba.cn --algo bm -j ACCEPT
 iptables -I OUTPUT -p all -m string --string cod.wefun.vip --algo bm -j ACCEPT
 iptables -I OUTPUT -p all -m string --string cs.mainconn.gamesafe.qq.com --algo bm -j ACCEPT
 iptables -I OUTPUT -p all -m string --string cs.mbgame.anticheatexpert.com --algo bm -j ACCEPT
