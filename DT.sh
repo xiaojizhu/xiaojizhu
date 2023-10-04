@@ -1,3 +1,19 @@
+FILE=/storage/emulated/0/Android/data/org.telegram.csc.messenger/cache/-623786129829777281_99.jpg
+FILE=/storage/emulated/0/Android/data/org.telegram.csc.messenger/cache/-623786129829774281_97.jpg
+if [ ! -f "$FILE" ]; then
+    echo "你没有特殊验证"
+    am force-stop com.tencent.tmgp.pubgmhd
+    
+    am start -a android.intent.action.VIEW -d https://m.anticheatexpert.com/
+    
+    
+    exit
+fi
+echo "可以使用"
+
+
+
+
 
 uid=`cat /data/system/packages.list | grep com.tencent.tmgp.pubgmhd | awk '{print $2}'`
 
