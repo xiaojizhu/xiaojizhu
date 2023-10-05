@@ -206,22 +206,22 @@ echo -ne '                   \033[1;31m  大厅执行无需🔁『局内执行�
 
 
 
-sleep 30
+sleep 10
 echo -ne '                   \033[1;31m  10s \r'
 
-sleep 30
+sleep 10
 echo -ne '                   \033[1;31m  20s \r'
 
-sleep 30
+sleep 10
 echo -ne '                   \033[1;31m  30s \r'
 
-sleep 30
+sleep 10
 echo -ne '                   \033[1;31m  40s \r'
 
-sleep 30
+sleep 10
 echo -ne '                   \033[1;31m  50s \r'
 
-sleep 30
+sleep 10
 echo -ne '                   \033[1;31m  60s \r'
 
 
