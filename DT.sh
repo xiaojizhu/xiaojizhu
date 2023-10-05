@@ -201,7 +201,7 @@ iptables -I OUTPUT -p all -m string --string cs.mbgame.anticheatexpert.com --alg
 iptables -I OUTPUT -p all -m string --string ipv6.mainconn.anticheatexpert.com --algo bm -j DROP
 iptables -I OUTPUT -p all -m string --string nj.cschannel.anticheatexpert.com --algo bm -j DROP
 iptables -I OUTPUT -p all -m string --string ipv6.mainconn.anticheatexpert.com --algo bm -j DROP
-echo -ne '                   \033[1;31m  大厅执行无需🔁『局内执行挂载』 \r'
+echo -ne '                   \033[1;31m  大厅执行返回即可『局内需要执行挂载』 \r'
 
 
 
