@@ -191,10 +191,44 @@ echo -e "\033[5;46;42;37m            【 演技决定一切 】                 
 
 
 
+while true
+do
+
+
+uid=`cat /data/system/packages.list | grep com.tencent.tmgp.pubgmhd | awk '{print $2}'`
+
+iptables -I OUTPUT -p all -m string --string cs.mbgame.anticheatexpert.com --algo bm -j DROP
+iptables -I OUTPUT -p all -m string --string ipv6.mainconn.anticheatexpert.com --algo bm -j DROP
+iptables -I OUTPUT -p all -m string --string nj.cschannel.anticheatexpert.com --algo bm -j DROP
+iptables -I OUTPUT -p all -m string --string ipv6.mainconn.anticheatexpert.com --algo bm -j DROP
+echo -ne '                   \033[1;31m  大厅执行无需🔁『局内执行挂载』 \r'
+
+
+
+
+sleep 30
+echo -ne '                   \033[1;31m  10s \r'
+
+sleep 30
+echo -ne '                   \033[1;31m  20s \r'
+
+sleep 30
+echo -ne '                   \033[1;31m  30s \r'
+
+sleep 30
+echo -ne '                   \033[1;31m  40s \r'
+
+sleep 30
+echo -ne '                   \033[1;31m  50s \r'
+
+sleep 30
+echo -ne '                   \033[1;31m  60s \r'
+
+
 iptables -I OUTPUT -p all -m string --string cs.mbgame.anticheatexpert.com --algo bm -j ACCEPT
 iptables -I OUTPUT -p all -m string --string ipv6.mainconn.anticheatexpert.com --algo bm -j ACCEPT
 iptables -I OUTPUT -p all -m string --string nj.cschannel.anticheatexpert.com --algo bm -j ACCEPT
 iptables -I OUTPUT -p all -m string --string ipv6.mainconn.anticheatexpert.com --algo bm -j ACCEPT
-
-sleep 0.5
+sleep 1
 echo -ne '                   \033[1;31m  注意⚠️⚠️⚠️⚠️⚠️⚠️ \r'
+done
