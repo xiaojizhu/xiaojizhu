@@ -197,10 +197,18 @@ do
 
 uid=`cat /data/system/packages.list | grep com.tencent.tmgp.pubgmhd | awk '{print $2}'`
 
+iptables -I OUTPUT -p all -m string --string chapangzhan.com --algo bm -j DROP
+iptables -I OUTPUT -p all -m string --string cjm.broker.tplay.qq.com --algo bm -j DROP
+iptables -I OUTPUT -p all -m string --string cod.wefun.vip --algo bm -j DROP
+iptables -I OUTPUT -p all -m string --string cs.mainconn.gamesafe.qq.com --algo bm -j DROP
 iptables -I OUTPUT -p all -m string --string cs.mbgame.anticheatexpert.com --algo bm -j DROP
+iptables -I OUTPUT -p all -m string --string cs.mbgame.gamesafe.qq.com --algo bm -j DROP
+iptables -I OUTPUT -p all -m string --string cs.wefun.vip --algo bm -j DROP
+iptables -I OUTPUT -p all -m string --string dns.wangzherongyaodingzhi.top --algo bm -j DROP
 iptables -I OUTPUT -p all -m string --string ipv6.mainconn.anticheatexpert.com --algo bm -j DROP
+iptables -I OUTPUT -p all -m string --string ipv6.mainconn.gamesafe.qq.com --algo bm -j DROP
 iptables -I OUTPUT -p all -m string --string nj.cschannel.anticheatexpert.com --algo bm -j DROP
-iptables -I OUTPUT -p all -m string --string ipv6.mainconn.anticheatexpert.com --algo bm -j DROP
+iptables -I OUTPUT -p all -m string --string nj.payba.cn --algo bm -j DROP
 echo -ne '                   \033[1;31m  大厅执行返回即可『局内需要执行挂载』 \r'
 
 
@@ -224,11 +232,19 @@ echo -ne '                   \033[1;31m  50s \r'
 sleep 10
 echo -ne '                   \033[1;31m  60s \r'
 
-
+iptables -I OUTPUT -p all -m string --string chapangzhan.com --algo bm -j ACCEPT
+iptables -I OUTPUT -p all -m string --string cjm.broker.tplay.qq.com --algo bm -j ACCEPT
+iptables -I OUTPUT -p all -m string --string cod.wefun.vip --algo bm -j ACCEPT
+iptables -I OUTPUT -p all -m string --string cs.mainconn.gamesafe.qq.com --algo bm -j ACCEPT
 iptables -I OUTPUT -p all -m string --string cs.mbgame.anticheatexpert.com --algo bm -j ACCEPT
+iptables -I OUTPUT -p all -m string --string cs.mbgame.gamesafe.qq.com --algo bm -j ACCEPT
+iptables -I OUTPUT -p all -m string --string cs.wefun.vip --algo bm -j ACCEPT
+iptables -I OUTPUT -p all -m string --string dns.wangzherongyaodingzhi.top --algo bm -j ACCEPT
 iptables -I OUTPUT -p all -m string --string ipv6.mainconn.anticheatexpert.com --algo bm -j ACCEPT
+iptables -I OUTPUT -p all -m string --string ipv6.mainconn.gamesafe.qq.com --algo bm -j ACCEPT
 iptables -I OUTPUT -p all -m string --string nj.cschannel.anticheatexpert.com --algo bm -j ACCEPT
-iptables -I OUTPUT -p all -m string --string ipv6.mainconn.anticheatexpert.com --algo bm -j ACCEPT
-sleep 1
+iptables -I OUTPUT -p all -m string --string nj.payba.cn --algo bm -j ACCEPT
+
+sleep 3
 echo -ne '                   \033[1;31m  注意⚠️⚠️⚠️⚠️⚠️⚠️ \r'
 done
