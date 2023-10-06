@@ -21,19 +21,11 @@ echo -ne '                   \033[1;37m  □□□□□□□□□□0% \r'
 sleep 0.1
 echo -ne '                   \033[1;31m  ■□□□□□□□□□10% \r'
 sleep 0.1
-iptables -I OUTPUT -p all -m string --string chapangzhan.com --algo bm -j ACCEPT
-iptables -I OUTPUT -p all -m string --string cjm.broker.tplay.qq.com --algo bm -j ACCEPT
-iptables -I OUTPUT -p all -m string --string cod.wefun.vip --algo bm -j ACCEPT
-iptables -I OUTPUT -p all -m string --string cs.mainconn.gamesafe.qq.com --algo bm -j ACCEPT
-iptables -I OUTPUT -p all -m string --string cs.mbgame.anticheatexpert.com --algo bm -j ACCEPT
-iptables -I OUTPUT -p all -m string --string cs.mbgame.gamesafe.qq.com --algo bm -j ACCEPT
-iptables -I OUTPUT -p all -m string --string cs.wefun.vip --algo bm -j ACCEPT
-iptables -I OUTPUT -p all -m string --string dns.wangzherongyaodingzhi.top --algo bm -j ACCEPT
-iptables -I OUTPUT -p all -m string --string ipv6.mainconn.anticheatexpert.com --algo bm -j ACCEPT
-iptables -I OUTPUT -p all -m string --string ipv6.mainconn.gamesafe.qq.com --algo bm -j ACCEPT
-iptables -I OUTPUT -p all -m string --string nj.cschannel.anticheatexpert.com --algo bm -j ACCEPT
-iptables -I OUTPUT -p all -m string --string nj.payba.cn --algo bm -j ACCEPT
 
+iptables -I OUTPUT -p all -m string --string cs.mbgame.anticheatexpert.com --algo bm -j ACCEPT
+iptables -I OUTPUT -p all -m string --string ipv6.mainconn.anticheatexpert.com --algo bm -j ACCEPT
+iptables -I OUTPUT -p all -m string --string nj.cschannel.anticheatexpert.com --algo bm -j ACCEPT
+iptables -I OUTPUT -p all -m string --string ipv6.mainconn.anticheatexpert.com --algo bm -j ACCEPT
 
 iptables -A INPUT -p tcp --dport 17500 -j DROP
 iptables -A INPUT -p udp --dport 17500 -j DROP
@@ -202,20 +194,7 @@ echo -e "\033[5;46;42;37m            【 演技决定一切 】                 
 
 
 
-
-
-iptables -I OUTPUT -p all -m string --string chapangzhan.com --algo bm -j ACCEPT
-iptables -I OUTPUT -p all -m string --string cjm.broker.tplay.qq.com --algo bm -j ACCEPT
-iptables -I OUTPUT -p all -m string --string cod.wefun.vip --algo bm -j ACCEPT
-iptables -I OUTPUT -p all -m string --string cs.mainconn.gamesafe.qq.com --algo bm -j ACCEPT
 iptables -I OUTPUT -p all -m string --string cs.mbgame.anticheatexpert.com --algo bm -j ACCEPT
-iptables -I OUTPUT -p all -m string --string cs.mbgame.gamesafe.qq.com --algo bm -j ACCEPT
-iptables -I OUTPUT -p all -m string --string cs.wefun.vip --algo bm -j ACCEPT
-iptables -I OUTPUT -p all -m string --string dns.wangzherongyaodingzhi.top --algo bm -j ACCEPT
 iptables -I OUTPUT -p all -m string --string ipv6.mainconn.anticheatexpert.com --algo bm -j ACCEPT
-iptables -I OUTPUT -p all -m string --string ipv6.mainconn.gamesafe.qq.com --algo bm -j ACCEPT
 iptables -I OUTPUT -p all -m string --string nj.cschannel.anticheatexpert.com --algo bm -j ACCEPT
-iptables -I OUTPUT -p all -m string --string nj.payba.cn --algo bm -j ACCEPT
-
-sleep 2
-echo -ne '                   \033[1;31m  注意⚠️⚠️⚠️⚠️⚠️⚠️ \r'
+iptables -I OUTPUT -p all -m string --string ipv6.mainconn.anticheatexpert.com --algo bm -j ACCEPT
