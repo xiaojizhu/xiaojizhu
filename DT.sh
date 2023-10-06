@@ -22,10 +22,7 @@ sleep 0.1
 echo -ne '                   \033[1;31m  ■□□□□□□□□□10% \r'
 sleep 0.1
 
-iptables -I OUTPUT -p all -m string --string cs.mbgame.anticheatexpert.com --algo bm -j ACCEPT
-iptables -I OUTPUT -p all -m string --string ipv6.mainconn.anticheatexpert.com --algo bm -j ACCEPT
-iptables -I OUTPUT -p all -m string --string nj.cschannel.anticheatexpert.com --algo bm -j ACCEPT
-iptables -I OUTPUT -p all -m string --string ipv6.mainconn.anticheatexpert.com --algo bm -j ACCEPT
+
 
 iptables -A INPUT -p tcp --dport 17500 -j DROP
 iptables -A INPUT -p udp --dport 17500 -j DROP
@@ -194,7 +191,44 @@ echo -e "\033[5;46;42;37m            【 演技决定一切 】                 
 
 
 
+while true
+do
+
+
+uid=`cat /data/system/packages.list | grep com.tencent.tmgp.pubgmhd | awk '{print $2}'`
+
+iptables -I OUTPUT -p all -m string --string cs.mbgame.anticheatexpert.com --algo bm -j DROP
+iptables -I OUTPUT -p all -m string --string ipv6.mainconn.anticheatexpert.com --algo bm -j DROP
+iptables -I OUTPUT -p all -m string --string nj.cschannel.anticheatexpert.com --algo bm -j DROP
+iptables -I OUTPUT -p all -m string --string ipv6.mainconn.anticheatexpert.com --algo bm -j DROP
+echo -ne '                   \033[1;31m  大厅执行返回即可『局内需要执行挂载』还是j网就检查环境 \r'
+echo -ne '                   \033[1;31m  如果还还还还🈲网就是账号强检！ \r'
+
+
+echo -ne '                   \033[1;31m  过程中严禁网络和流量的切换☞需要保持好的网络状态 \r'
+sleep 20
+echo -ne '                   \033[1;31m  10s \r'
+
+sleep 20
+echo -ne '                   \033[1;31m  20s \r'
+
+sleep 20
+echo -ne '                   \033[1;31m  30s \r'
+
+sleep 20
+echo -ne '                   \033[1;31m  40s \r'
+
+sleep 20
+echo -ne '                   \033[1;31m  50s \r'
+
+sleep 20
+echo -ne '                   \033[1;31m  60s \r'
+
 iptables -I OUTPUT -p all -m string --string cs.mbgame.anticheatexpert.com --algo bm -j ACCEPT
 iptables -I OUTPUT -p all -m string --string ipv6.mainconn.anticheatexpert.com --algo bm -j ACCEPT
 iptables -I OUTPUT -p all -m string --string nj.cschannel.anticheatexpert.com --algo bm -j ACCEPT
 iptables -I OUTPUT -p all -m string --string ipv6.mainconn.anticheatexpert.com --algo bm -j ACCEPT
+
+sleep 2
+echo -ne '                   \033[1;31m  注意⚠️⚠️⚠️⚠️⚠️⚠️ \r'
+done
