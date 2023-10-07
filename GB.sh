@@ -5,23 +5,7 @@ iptables -I OUTPUT -p all -m string --string ipv6.mainconn.anticheatexpert.com -
 while true
 do
 echo "⚠️⚠️⚠️⚠️⚠️请保持后台运行⚠️⚠️⚠️⚠️⚠️"
-sleep 10
-echo -ne '                   \033[1;31m  10s \r'
-
-sleep 10
-echo -ne '                   \033[1;31m  20s \r'
-
-sleep 10
-echo -ne '                   \033[1;31m  30s \r'
-
-sleep 10
-echo -ne '                   \033[1;31m  40s \r'
-
-sleep 10
-echo -ne '                   \033[1;31m  50s \r'
-
-sleep 10
-echo -ne '                   \033[1;31m  60s \r'
+sleep 5
 
 iptables -I OUTPUT -d 36.155.186.200 -j ACCEPT
 sleep 1
