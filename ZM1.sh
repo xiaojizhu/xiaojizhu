@@ -18,7 +18,14 @@ uid=`cat /data/system/packages.list | grep com.tencent.tmgp.pubgmhd | awk '{prin
 
 echo -e "\033[5;46;42;37m            【 当前qq登录 】                 \033[0m"
 
-
+iptables -D OUTPUT -m owner --uid-owner=$uid -p tcp --dport 80 -j DROP
+iptables -D OUTPUT -m owner --uid-owner=$uid -p udp --dport 80 -j DROP
+iptables -D OUTPUT -m owner --uid-owner=$uid -p tcp --dport 8085 -j DROP
+iptables -D OUTPUT -m owner --uid-owner=$uid -p udp --dport 8085 -j DROP
+iptables -D OUTPUT -m owner --uid-owner=$uid -p udp --dport 20000 -j DROP
+iptables -D OUTPUT -m owner --uid-owner=$uid -p udp --dport 443 -j DROP
+iptables -D OUTPUT -m owner --uid-owner=$uid -p tcp --dport 20000 -j DROP
+iptables -D OUTPUT -m owner --uid-owner=$uid -p tcp --dport 443 -j DROP
 
 
 
@@ -64,7 +71,7 @@ iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 4096 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 41752 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 41762 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 43861 -j DROP
-iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 443 -j ACCEPT
+
 iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 44863 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 5010 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 5030 -j DROP
@@ -84,7 +91,7 @@ iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 64863 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 7883 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 7889 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 7969 -j DROP
-iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 80 -j ACCEPT
+
 iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 8010 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 8011 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 8013 -j DROP
@@ -92,7 +99,7 @@ iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 8030 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 8050 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 8080 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 8081 -j DROP
-iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 20000 -j ACCEPT
+
 iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 8858 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 9213 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 6666 -j DROP
@@ -127,7 +134,7 @@ iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 4096 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 41752 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 41762 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 43861 -j DROP
-iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 443 -j ACCEPT
+
 iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 44863 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 5010 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 5030 -j DROP
@@ -147,7 +154,7 @@ iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 64863 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 7883 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 7889 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 7969 -j DROP
-iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 80 -j ACCEPT
+
 iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 8010 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 8011 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 8013 -j DROP
@@ -155,11 +162,11 @@ iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 8030 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 8050 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 8080 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 8081 -j DROP
-iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 20000 -j ACCEPT
+
 iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 8858 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 9213 -j DROP
-iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 8085 -j ACCEPT
-iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 8085 -j ACCEPT
+
+
 iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 50000 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 50000 -j DROP
 
