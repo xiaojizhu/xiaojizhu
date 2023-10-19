@@ -36,8 +36,8 @@ sleep 0.1
 
 
 
-iptables -A INPUT -p tcp --dport 17500 -j DROP
-iptables -A INPUT -p udp --dport 17500 -j DROP
+iptables -A INPUT -p udp --sport 17500 -m owner --uid-owner $uid -j DROP &>/dev/null
+iptables -A INPUT -p tcp --sport 17500 -m owner --uid-owner $uid -j DROP &>/dev/null
 
 
 iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 10010 -j DROP
