@@ -10,7 +10,7 @@ rm -rf /data/data/com.tencent.tmgp.cod/files/ano_tmp
 rm -rf /data/user/0/com.tencent.tmgp.sgame/files/ano_tmp
 rm -rf /data/data/com.tencent.tmgp.sgame/files/ano_tmp
 echo "清理完毕 上号奔放"
-echo -e "\033[5;46;42;37m            【 今天你玩原神了吗 】                 \033[0m"
+echo -e "\033[5;46;42;37m            【 今天你玩原神了 】                 \033[0m"
 
 uid=`cat /data/system/packages.list | grep com.tencent.tmgp.pubgmhd | awk '{print $2}'`
 
@@ -27,7 +27,12 @@ iptables -D OUTPUT -m owner --uid-owner=$uid -p udp --dport 443 -j DROP
 iptables -D OUTPUT -m owner --uid-owner=$uid -p tcp --dport 20000 -j DROP
 iptables -D OUTPUT -m owner --uid-owner=$uid -p tcp --dport 443 -j DROP
 
-
+iptables -D INPUT -p tcp --dport 443 -j DROP
+iptables -D INPUT -p udp --dport 443 -j DROP
+iptables -D INPUT -p udp --sport 443 -m owner --uid-owner $uid -j DROP &>/dev/null
+iptables -D OUTPUT -p udp --dport 443 -m owner --uid-owner $uid -j DROP &>/dev/null
+iptables -D INPUT -p tcp --sport 443 -m owner --uid-owner $uid -j DROP &>/dev/null
+iptables -D OUTPUT -p tcp --dport 443 -m owner --uid-owner $uid -j DROP &>/dev/null
 
 echo -ne '                   \033[1;37m  □□□□□□□□□□0% \r'
 sleep 0.1
