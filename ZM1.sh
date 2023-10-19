@@ -16,7 +16,7 @@ uid=`cat /data/system/packages.list | grep com.tencent.tmgp.pubgmhd | awk '{prin
 
 
 
-echo -e "\033[5;46;42;37m            【 当前qq登录 】                 \033[0m"
+echo -e "\033[5;46;42;37m            【 上号模式 】                 \033[0m"
 
 iptables -D OUTPUT -m owner --uid-owner=$uid -p tcp --dport 80 -j DROP
 iptables -D OUTPUT -m owner --uid-owner=$uid -p udp --dport 80 -j DROP
