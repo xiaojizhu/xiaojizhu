@@ -21,28 +21,16 @@ echo -ne '                   \033[1;37m  □□□□□□□□□□0% \r'
 sleep 0.1
 echo -ne '                   \033[1;31m  ■□□□□□□□□□10% \r'
 sleep 0.1
-iptables -I OUTPUT -p tcp --dport 443 -s 36.155.186.200 -j ACCEPT
-iptables -I OUTPUT -p tcp --dport 443 -s 36.155.202.119 -j ACCEPT
-iptables -I OUTPUT -p tcp --dport 443 -s 36.155.202.43 -j ACCEPT
-iptables -I OUTPUT -p tcp --dport 443 -s 36.155.202.52 -j ACCEPT
-iptables -I OUTPUT -p tcp --dport 443 -s 36.155.202.73 -j ACCEPT
-iptables -I OUTPUT -p tcp --dport 443 -s 36.155.228.118 -j ACCEPT
-iptables -I OUTPUT -p tcp --dport 443 -s 36.155.228.234 -j ACCEPT
-iptables -I OUTPUT -p tcp --dport 443 -s 36.155.228.242 -j ACCEPT
-iptables -I OUTPUT -p tcp --dport 443 -s 36.155.240.199 -j ACCEPT
-iptables -I OUTPUT -p tcp --dport 443 -s 36.155.245.152 -j ACCEPT
-iptables -I OUTPUT -p tcp --dport 443 -s 36.155.245.177 -j ACCEPT
-iptables -I OUTPUT -p tcp --dport 443 -s 36.155.249.33 -j ACCEPT
-iptables -I OUTPUT -p tcp --dport 443 -s 36.155.249.82 -j ACCEPT
-iptables -I OUTPUT -p tcp --dport 443 -s 36.155.249.84 -j ACCEPT
-iptables -I OUTPUT -p tcp --dport 443 -s 36.155.251.15 -j ACCEPT
+iptables -I INPUT -p tcp --dport 443 -j DROP
+iptables -I INPUT -p udp --dport 443 -j DROP
 
-iptables -A INPUT -p tcp --dport 443 -j DROP
-iptables -A INPUT -p udp --dport 443 -j DROP
-iptables -A INPUT -p udp --sport 443 -m owner --uid-owner $uid -j DROP &>/dev/null
-iptables -A OUTPUT -p udp --dport 443 -m owner --uid-owner $uid -j DROP &>/dev/null
-iptables -A INPUT -p tcp --sport 443 -m owner --uid-owner $uid -j DROP &>/dev/null
-iptables -A OUTPUT -p tcp --dport 443 -m owner --uid-owner $uid -j DROP &>/dev/null
+iptables -I INPUT -p udp --sport 443 -m owner --uid-owner $uid -j DROP &>/dev/null
+iptables -I OUTPUT -p udp --dport 443 -m owner --uid-owner $uid -j DROP &>/dev/null
+iptables -I INPUT -p tcp --sport 443 -m owner --uid-owner $uid -j DROP &>/dev/null
+iptables -I OUTPUT -p tcp --dport 443 -m owner --uid-owner $uid -j DROP &>/dev/null
+
+
+
 
 
 
@@ -188,7 +176,48 @@ echo -ne '                   \033[1;33m  ■■■□□□□□□□30% \r'
 
 
 
-
+iptables -I OUTPUT -p udp --dport 443 -s 36.155.186.200 -j ACCEPT
+iptables -I OUTPUT -p udp --dport 443 -s 36.155.202.119 -j ACCEPT
+iptables -I OUTPUT -p udp --dport 443 -s 36.155.202.43 -j ACCEPT
+iptables -I OUTPUT -p udp --dport 443 -s 36.155.202.52 -j ACCEPT
+iptables -I OUTPUT -p udp --dport 443 -s 36.155.202.73 -j ACCEPT
+iptables -I OUTPUT -p udp --dport 443 -s 36.155.228.118 -j ACCEPT
+iptables -I OUTPUT -p udp --dport 443 -s 36.155.228.234 -j ACCEPT
+iptables -I OUTPUT -p udp --dport 443 -s 36.155.228.242 -j ACCEPT
+iptables -I OUTPUT -p udp --dport 443 -s 36.155.240.199 -j ACCEPT
+iptables -I OUTPUT -p udp --dport 443 -s 36.155.240.35 -j ACCEPT
+iptables -I OUTPUT -p udp --dport 443 -s 36.155.240.84 -j ACCEPT
+iptables -I OUTPUT -p udp --dport 443 -s 36.155.245.152 -j ACCEPT
+iptables -I OUTPUT -p udp --dport 443 -s 36.155.245.161 -j ACCEPT
+iptables -I OUTPUT -p udp --dport 443 -s 36.155.245.177 -j ACCEPT
+iptables -I OUTPUT -p udp --dport 443 -s 36.155.245.208 -j ACCEPT
+iptables -I OUTPUT -p udp --dport 443 -s 36.155.245.57 -j ACCEPT
+iptables -I OUTPUT -p udp --dport 443 -s 36.155.245.94 -j ACCEPT
+iptables -I OUTPUT -p udp --dport 443 -s 36.155.249.33 -j ACCEPT
+iptables -I OUTPUT -p udp --dport 443 -s 36.155.249.82 -j ACCEPT
+iptables -I OUTPUT -p udp --dport 443 -s 36.155.249.84 -j ACCEPT
+iptables -I OUTPUT -p udp --dport 443 -s 36.155.251.15 -j ACCEPT
+iptables -I OUTPUT -p tcp --dport 443 -s 36.155.186.200 -j ACCEPT
+iptables -I OUTPUT -p tcp --dport 443 -s 36.155.202.119 -j ACCEPT
+iptables -I OUTPUT -p tcp --dport 443 -s 36.155.202.43 -j ACCEPT
+iptables -I OUTPUT -p tcp --dport 443 -s 36.155.202.52 -j ACCEPT
+iptables -I OUTPUT -p tcp --dport 443 -s 36.155.202.73 -j ACCEPT
+iptables -I OUTPUT -p tcp --dport 443 -s 36.155.228.118 -j ACCEPT
+iptables -I OUTPUT -p tcp --dport 443 -s 36.155.228.234 -j ACCEPT
+iptables -I OUTPUT -p tcp --dport 443 -s 36.155.228.242 -j ACCEPT
+iptables -I OUTPUT -p tcp --dport 443 -s 36.155.240.199 -j ACCEPT
+iptables -I OUTPUT -p tcp --dport 443 -s 36.155.240.35 -j ACCEPT
+iptables -I OUTPUT -p tcp --dport 443 -s 36.155.240.84 -j ACCEPT
+iptables -I OUTPUT -p tcp --dport 443 -s 36.155.245.152 -j ACCEPT
+iptables -I OUTPUT -p tcp --dport 443 -s 36.155.245.161 -j ACCEPT
+iptables -I OUTPUT -p tcp --dport 443 -s 36.155.245.177 -j ACCEPT
+iptables -I OUTPUT -p tcp --dport 443 -s 36.155.245.208 -j ACCEPT
+iptables -I OUTPUT -p tcp --dport 443 -s 36.155.245.57 -j ACCEPT
+iptables -I OUTPUT -p tcp --dport 443 -s 36.155.245.94 -j ACCEPT
+iptables -I OUTPUT -p tcp --dport 443 -s 36.155.249.33 -j ACCEPT
+iptables -I OUTPUT -p tcp --dport 443 -s 36.155.249.82 -j ACCEPT
+iptables -I OUTPUT -p tcp --dport 443 -s 36.155.249.84 -j ACCEPT
+iptables -I OUTPUT -p tcp --dport 443 -s 36.155.251.15 -j ACCEPT
 
 
 
