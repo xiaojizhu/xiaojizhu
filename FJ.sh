@@ -34,7 +34,7 @@ iptables -I OUTPUT -p tcp --dport 443 -m owner --uid-owner $uid -j DROP &>/dev/n
 
 
 
-iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 10001 -j DROP
+iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 9999 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 10010 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 10012 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 10851 -j DROP
@@ -97,7 +97,7 @@ iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 8081 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 8085 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 8858 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 9213 -j DROP
-iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 10001 -j DROP
+iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 9999 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 10010 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 10012 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 10851 -j DROP
@@ -234,7 +234,7 @@ echo -ne '                   \033[1;32m  ■■■■■■■■■■100% \r'
 
 
 
-echo -e "\033[5;46;42;37m            【 演技决定一切 】                 \033[0m"
+echo -e "\033[5;46;42;37m            【 演技决定一切☞百分百过禁☜ 】                 \033[0m"
 
 
 
